@@ -741,25 +741,50 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <a class="btn primary" href="https://rovynshoppy.myshopify.com/" rel="noopener noreferrer">Visit the store <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
-      <figure class="store-fig">
-        <a class="browser" href="https://rovynshoppy.myshopify.com/" rel="noopener noreferrer" aria-label="Open the Rovyn online store in a new tab">
-          <span class="browser-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr">rovynshoppy.myshopify.com</span><span class="open">Open</span></span>
-          <span class="browser-body">
-            <span class="b-nav"><strong>Rovyn</strong><span>Home / Products / Contact / About Us</span></span>
-            <span class="b-hero">Built for Your Every Day</span>
-            <ul class="b-cats" aria-label="Store categories">
-              <li>Men's Clothing</li><li>Women's Clothing</li><li>Accessories</li><li>Men's Shoes</li><li>Women's Shoes</li><li>Home Necessities</li><li>Electronics</li>
-            </ul>
-            <ul class="b-products" aria-label="Featured products">
-              <li><span>40 Oz Insulated Tumbler With Handle and Straw</span><span>$16.00</span></li>
-              <li><span>Mandarin-collar Men's Baseball Jacket</span><span>$46.00</span></li>
-              <li><span>Bluetooth Karaoke Microphone Speaker</span><span>$30.00</span></li>
-              <li><span>Mini3 Folding Drone</span><span>$45.00</span></li>
-            </ul>
-          </span>
-        </a>
-        <figcaption class="store-note">Preview made from the live store page. Open the store to see it in full.</figcaption>
-      </figure>
+      
+      <div class="shots rovyn-shots">
+
+        <figure class="shot-fig">
+          <button class="shot" type="button"
+            data-cap="Rovyn — Home page"
+            aria-label="Enlarge Rovyn home page screenshot">
+            <img src="./images/rovyn_home.png"
+              alt="Rovyn online store home page">
+          </button>
+          <figcaption>01 / Home page</figcaption>
+        </figure>
+
+        <figure class="shot-fig">
+          <button class="shot" type="button"
+            data-cap="Rovyn — Products page"
+            aria-label="Enlarge Rovyn products page screenshot">
+            <img src="./images/rovyn_products.png"
+              alt="Rovyn store product listings page">
+          </button>
+          <figcaption>02 / Products page</figcaption>
+        </figure>
+
+        <figure class="shot-fig">
+          <button class="shot" type="button"
+            data-cap="Rovyn — Product details"
+            aria-label="Enlarge Rovyn product details screenshot">
+            <img src="./images/rovyn_prod.png"
+              alt="Rovyn individual product details page">
+          </button>
+          <figcaption>03 / Product details</figcaption>
+        </figure>
+
+        <figure class="shot-fig">
+          <button class="shot" type="button"
+            data-cap="Rovyn — About Us page"
+            aria-label="Enlarge Rovyn About Us screenshot">
+            <img src="./images/rovyn_aboutus.png"
+              alt="Rovyn About Us page">
+          </button>
+          <figcaption>04 / About Us</figcaption>
+        </figure>
+
+      </div>
     </article>
 
     <article class="feature reveal">
@@ -1140,10 +1165,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </section>
 </main>
 
+
 <footer>
   <div class="wrap">
     <span>&copy; 2026 Joemar Niño A. Abellana</span>
-    <a href="#top">Back to top</a>
+
+    <a href="https://github.com/joemarist"
+       target="_blank"
+       rel="noopener noreferrer">
+      GitHub Profile ↗
+    </a>
+
+    <a href="#top">Back to top ↑</a>
   </div>
 </footer>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot viewer">
