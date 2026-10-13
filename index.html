@@ -1,4 +1,6 @@
-<!doctype html><html><head>
+<!doctype html>
+<html lang="en">
+  <head>
   <meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="icon" type="image/png" href="./images/favicon_2.png?v=1">
   <title>Joemar Niño Abellana | Web Developer Portfolio</title>
 
@@ -33,6 +35,8 @@
 
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -82,6 +86,22 @@ h1,h2,h3,h4,p,ul,dl,dd,figure{margin:0}
 ul{padding:0;list-style:none}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip-link{
+  position:fixed;
+  top:8px;
+  left:8px;
+  z-index:1000;
+  padding:10px 14px;
+  background:var(--ink);
+  color:var(--paper);
+  border:2px solid var(--accent);
+  text-decoration:none;
+  transform:translateY(-150%);
+}
+
+.skip-link:focus{
+  transform:translateY(0);
+}
 .wrap{max-width:1120px;margin-inline:auto;padding-inline:var(--gutter)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 section{scroll-margin-top:72px}
@@ -579,7 +599,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="wrap hero" id="top">
     <div>
       <p class="status fade-in" style="--d:0"><span class="dot"></span>Open to remote work</p>
