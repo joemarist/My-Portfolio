@@ -731,12 +731,12 @@
         <div class="c-row">
           <p class="label">Email</p>
           <span class="c-val" id="v-email">abellananino088@gmail.com</span>
-          <button class="copy" type="button" data-copy="abellananino088@gmail.com" data-target="v-email"><span class="idle-text">Copy</span><span class="done-text">Copied</span></button>
+          <button class="copy" type="button" aria-label="Copy email address" data-copy="abellananino088@gmail.com" data-target="v-email"><span class="idle-text">Copy</span><span class="done-text">Copied</span></button>
         </div>
         <div class="c-row">
           <p class="label">Phone</p>
           <span class="c-val" id="v-phone">(+63)976 246 6560</span>
-          <button class="copy" type="button" data-copy="09762466560" data-target="v-phone"><span class="idle-text">Copy</span><span class="done-text">Copied</span></button>
+          <button class="copy" type="button" aria-label="Copy phone number" data-copy="09762466560" data-target="v-phone"><span class="idle-text">Copy</span><span class="done-text">Copied</span></button>
         </div>
         <div class="c-row">
           <p class="label">Fiverr</p>
@@ -773,7 +773,8 @@
     <a href="#top">Back to top ↑</a>
   </div>
 </footer>
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title" aria-describedby="lb-cap">
+  <h2 id="lb-title" class="sr">Screenshot viewer</h2>
   <button class="btn lb-close" id="lb-close" type="button">Close</button>
   <img id="lb-img" alt="">
   <p class="lb-cap" id="lb-cap"></p>
