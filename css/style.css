@@ -699,3 +699,231 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     margin-top: 36px;
   }
 }
+
+
+/* ===== Step 4: Portfolio chapter color system ===== */
+
+/* Keep each chapter full-width, with its content aligned to the same grid. */
+#top,
+#services,
+#experience,
+#work,
+#products,
+#tools,
+#education,
+#contact {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: max(
+    var(--gutter),
+    calc((100% - 1120px) / 2 + var(--gutter))
+  );
+  background: var(--paper);
+  color: var(--ink);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+/* Chapter 1 — Introduction: muted green */
+#top,
+#services,
+#experience {
+  --paper: #EAF0E8;
+  --surface: #DCE7DC;
+  --ink: #10251F;
+  --muted: #4E655A;
+  --line: #C4D2C5;
+  --accent: #477A39;
+  --on-accent: #FFFFFF;
+  --mark: #C8F169;
+  --on-mark: #10251F;
+  --ok: #34784B;
+}
+
+/* Chapter 2 — Selected work: cool blue */
+#work {
+  --paper: #EAF0F8;
+  --surface: #DCE6F2;
+  --ink: #182535;
+  --muted: #53677E;
+  --line: #C4D2E2;
+  --accent: #315F9B;
+  --on-accent: #FFFFFF;
+  --mark: #8DBDFF;
+  --on-mark: #182535;
+  --ok: #34784B;
+}
+
+/* Chapter 3 — Digital products: warm neutral */
+#products {
+  --paper: #F7EDE2;
+  --surface: #EEDDCF;
+  --ink: #35251F;
+  --muted: #796052;
+  --line: #DDC9B7;
+  --accent: #9A5738;
+  --on-accent: #FFFFFF;
+  --mark: #F1C99D;
+  --on-mark: #35251F;
+  --ok: #34784B;
+}
+
+/* Chapter 4 — Skills, education, and contact: indigo */
+#tools,
+#education,
+#contact,
+footer {
+  --paper: #EFECF9;
+  --surface: #E1DDF0;
+  --ink: #25213C;
+  --muted: #625C7D;
+  --line: #D0C9E5;
+  --accent: #6854A5;
+  --on-accent: #FFFFFF;
+  --mark: #C4B5FD;
+  --on-mark: #25213C;
+  --ok: #34784B;
+}
+
+footer {
+  background: var(--paper);
+  color: var(--ink);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+/* Dark theme — explicit theme-toggle selection */
+:root[data-theme="dark"] #top,
+:root[data-theme="dark"] #services,
+:root[data-theme="dark"] #experience {
+  --paper: #101A15;
+  --surface: #19271E;
+  --ink: #E8F0E8;
+  --muted: #A5B7A7;
+  --line: #304536;
+  --accent: #A5D58A;
+  --on-accent: #102014;
+  --mark: #D6F28A;
+  --on-mark: #182316;
+  --ok: #80D69B;
+}
+
+:root[data-theme="dark"] #work {
+  --paper: #101925;
+  --surface: #192638;
+  --ink: #E8EFFA;
+  --muted: #A5B5CB;
+  --line: #304158;
+  --accent: #9BC2FF;
+  --on-accent: #14233A;
+  --mark: #B2D2FF;
+  --on-mark: #182535;
+  --ok: #80D69B;
+}
+
+:root[data-theme="dark"] #products {
+  --paper: #211914;
+  --surface: #30231B;
+  --ink: #F4E9DF;
+  --muted: #C3AA97;
+  --line: #4A362A;
+  --accent: #E9A77F;
+  --on-accent: #29190F;
+  --mark: #EFC69C;
+  --on-mark: #35251F;
+  --ok: #80D69B;
+}
+
+:root[data-theme="dark"] #tools,
+:root[data-theme="dark"] #education,
+:root[data-theme="dark"] #contact,
+:root[data-theme="dark"] footer {
+  --paper: #191628;
+  --surface: #25213A;
+  --ink: #EEEAFB;
+  --muted: #B5AECE;
+  --line: #3B3457;
+  --accent: #C4B5FD;
+  --on-accent: #25213C;
+  --mark: #D0C4FF;
+  --on-mark: #25213C;
+  --ok: #80D69B;
+}
+
+/* Dark system preference — unless the user explicitly selects light mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #top,
+  :root:not([data-theme="light"]) #services,
+  :root:not([data-theme="light"]) #experience {
+    --paper: #101A15;
+    --surface: #19271E;
+    --ink: #E8F0E8;
+    --muted: #A5B7A7;
+    --line: #304536;
+    --accent: #A5D58A;
+    --on-accent: #102014;
+    --mark: #D6F28A;
+    --on-mark: #182316;
+    --ok: #80D69B;
+  }
+
+  :root:not([data-theme="light"]) #work {
+    --paper: #101925;
+    --surface: #192638;
+    --ink: #E8EFFA;
+    --muted: #A5B5CB;
+    --line: #304158;
+    --accent: #9BC2FF;
+    --on-accent: #14233A;
+    --mark: #B2D2FF;
+    --on-mark: #182535;
+    --ok: #80D69B;
+  }
+
+  :root:not([data-theme="light"]) #products {
+    --paper: #211914;
+    --surface: #30231B;
+    --ink: #F4E9DF;
+    --muted: #C3AA97;
+    --line: #4A362A;
+    --accent: #E9A77F;
+    --on-accent: #29190F;
+    --mark: #EFC69C;
+    --on-mark: #35251F;
+    --ok: #80D69B;
+  }
+
+  :root:not([data-theme="light"]) #tools,
+  :root:not([data-theme="light"]) #education,
+  :root:not([data-theme="light"]) #contact,
+  :root:not([data-theme="light"]) footer {
+    --paper: #191628;
+    --surface: #25213A;
+    --ink: #EEEAFB;
+    --muted: #B5AECE;
+    --line: #3B3457;
+    --accent: #C4B5FD;
+    --on-accent: #25213C;
+    --mark: #D0C4FF;
+    --on-mark: #25213C;
+    --ok: #80D69B;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  #top,
+  #services,
+  #experience,
+  #work,
+  #products,
+  #tools,
+  #education,
+  #contact,
+  footer {
+    transition: none;
+  }
+}
