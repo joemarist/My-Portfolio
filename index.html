@@ -703,6 +703,69 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .js .draw .tl-fill{clip-path:none;transition:none}
   .lb,.lb img,.shot,.shot img{transition-duration:1ms}
 }
+
+/* ===== Portfolio redesign: oversized hero ===== */
+
+.hero {
+  display: block;
+  padding-block: clamp(56px, 10vw, 120px)
+    clamp(48px, 7vw, 88px);
+}
+
+.hero > div:first-child {
+  max-width: 100%;
+}
+
+.hero h1 {
+  max-width: 100%;
+  margin-top: clamp(24px, 4vw, 44px);
+  font-size: clamp(2.8rem, 12.2vw, 9rem);
+  line-height: 0.84;
+  letter-spacing: -0.065em;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+.hero h1 .mask {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.hero h1 .line {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.hero .lede {
+  max-width: 52ch;
+  margin-top: clamp(24px, 4vw, 36px);
+}
+
+.hero .cta {
+  margin-top: 28px;
+}
+
+.hero .glance {
+  width: min(100%, 620px);
+  margin: clamp(36px, 7vw, 76px) 0 0 auto;
+}
+
+/* Smaller screens */
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 12.5vw, 5rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+
+  .hero .glance {
+    margin-top: 36px;
+  }
+}
 </style>
 
 <header class="site-header">
@@ -732,9 +795,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <section class="wrap hero" id="top">
     <div>
       <p class="status fade-in" style="--d:0"><span class="dot"></span>Open to remote work</p>
-      <h1 aria-label="Joemar Niño Abellana">
-        <span class="mask" aria-hidden="true"><span class="line" style="--i:0">Joemar Niño</span></span>
-        <span class="mask" aria-hidden="true"><span class="line accent" style="--i:1">Abellana</span></span>
+      <h1 aria-label="I build digital experiences">
+        <span class="mask" aria-hidden="true">
+          <span class="line" style="--i:0">I BUILD</span>
+        </span>
+        <span class="mask" aria-hidden="true">
+          <span class="line accent" style="--i:1">DIGITAL</span>
+        </span>
+        <span class="mask" aria-hidden="true">
+          <span class="line" style="--i:2">EXPERIENCES.</span>
+        </span>
       </h1>
       <p class="lede fade-in" style="--d:2">I'm a <strong>web developer focused on building practical, user-friendly web applications</strong>. My portfolio features projects involving reservation systems, management platforms, and online experiences, alongside my work with e-commerce and digital products.</p>
       <div class="cta fade-in" style="--d:3">
@@ -1452,14 +1522,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     mm.add('(prefers-reduced-motion: no-preference)',function(){
 
       /* 1. Hero intro: rare, once per visit, so a longer duration is fine */
-      var lines=gsap.utils.toArray('.hero .line');
-      gsap.set(lines,{visibility:'visible'});
-      var intro=gsap.timeline({defaults:{ease:EASE}});
+      var lines = gsap.utils.toArray('.hero .line');
+      gsap.set(lines, { visibility: 'visible' });
+
+      var intro = gsap.timeline({
+        defaults: { ease: EASE }
+      });
+
       intro
-        .from(lines,{yPercent:105,duration:.9,stagger:.08},.1)
+        .from(lines, {
+          yPercent: 105,
+          duration: 1.05,
+          stagger: .14
+        }, .1)
         .fromTo('.hero .fade-in',
-          {opacity:0,y:12},
-          {opacity:1,y:0,duration:.6,stagger:.07},.35);
+          { opacity: 0, y: 16 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: .7,
+            stagger: .08
+          },
+          .45
+        );
 
       /* 2. Scroll reveals: batched so items entering together stagger 60ms */
       ScrollTrigger.batch('.reveal',{
