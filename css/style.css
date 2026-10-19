@@ -652,19 +652,25 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .hero h1 {
   max-width: 100%;
   margin-top: clamp(24px, 4vw, 44px);
-  font-size: clamp(2.8rem, 12.2vw, 9rem);
-  line-height: 0.84;
-  letter-spacing: -0.065em;
+  font-size: clamp(2rem, 12.2vw, 9rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
   overflow-wrap: normal;
   text-wrap: balance;
 }
 
 .hero h1 .mask {
+  display: block;
   width: fit-content;
-  max-width: 100%;
+  max-width: calc(100% + 0.16em);
+  padding: 0.08em 0.08em 0.12em;
+  margin-inline: -0.08em;
+  margin-bottom: -0.12em;
+  overflow: hidden;
 }
 
 .hero h1 .line {
+  display: block;
   width: fit-content;
   max-width: 100%;
 }
@@ -689,10 +695,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     padding-top: 48px;
   }
 
+  
   .hero h1 {
-    font-size: clamp(2.7rem, 12.5vw, 5rem);
-    line-height: 0.9;
-    letter-spacing: -0.055em;
+    font-size: clamp(2rem, 11vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.04em;
   }
 
   .hero .glance {
