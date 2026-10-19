@@ -927,3 +927,90 @@ footer {
     transition: none;
   }
 }
+
+
+
+/* ===== Step 5: Sticky project scenes ===== */
+
+/* Desktop: project summary stays visible as details scroll */
+@media (min-width: 861px) {
+    #work .showcase {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 0.85fr)
+        minmax(0, 1.15fr);
+      column-gap: clamp(32px, 5vw, 72px);
+      row-gap: 28px;
+      align-items: start;
+    }
+  
+    /* Let the project summary and feature list join the parent grid */
+    #work .showcase-head {
+      display: contents;
+    }
+  
+    #work .showcase-head > div:first-child {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      min-width: 0;
+    }
+  
+    #work .showcase .points {
+      grid-column: 2;
+      grid-row: 1;
+      min-width: 0;
+    }
+  
+    #work .showcase .shots {
+      grid-column: 2;
+      grid-row: 2;
+      min-width: 0;
+      margin-top: 0;
+      grid-template-columns: minmax(0, 1fr);
+    }
+  
+    #work .showcase .shot-fig.wide {
+      grid-column: auto;
+    }
+  }
+  
+  /* Mobile and tablet: preserve the original normal-flow layout */
+  @media (max-width: 860px) {
+    #work .showcase {
+      display: block;
+    }
+  
+    #work .showcase-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+  
+    #work .showcase-head > div:first-child {
+      position: static;
+    }
+  
+    #work .showcase .points,
+    #work .showcase .shots {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  
+    #work .showcase .shots {
+      margin-top: 36px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    #work .showcase .shot-fig.wide {
+      grid-column: 1 / -1;
+    }
+  }
+  
+  @media (max-width: 620px) {
+    #work .showcase .shots {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  
